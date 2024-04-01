@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.FuncionarioFragment">
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.LoginFragment">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar"
+            android:layout_width="424dp"
+            android:layout_height="74dp"
+            android:background="#C47D12"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            tools:layout_editor_absoluteX="-13dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="692dp"
+            android:layout_height="698dp"
+            android:src="@drawable/epi2_removebg_preview"
+            tools:layout_editor_absoluteX="-121dp"
+            tools:layout_editor_absoluteY="63dp" />
+
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="375dp"
+            android:layout_height="558dp"
+            android:background="#40484d"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="135dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="149dp"
+            android:layout_height="22dp"
+            android:text="Validade EPI: "
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="366dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="149dp"
+            android:layout_height="22dp"
+            android:text="Validade CA: "
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="474dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="149dp"
+            android:layout_height="22dp"
+            android:text="Número do CA: "
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="419dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="301dp"
+            android:layout_height="108dp"
+            android:text="Modo de uso: "
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="55dp"
+            tools:layout_editor_absoluteY="531dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="75dp"
+            android:layout_height="69dp"
+            android:src="@drawable/epiorg"
+            tools:layout_editor_absoluteX="320dp"
+            tools:layout_editor_absoluteY="5dp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="320dp"
+            android:layout_height="176dp"
+            tools:layout_editor_absoluteX="37dp"
+            tools:layout_editor_absoluteY="160dp"
+            tools:src="@tools:sample/avatars" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

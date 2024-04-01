@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.FuncionarioFragment">
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.LoginFragment">
+
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar"
+            android:layout_width="424dp"
+            android:layout_height="74dp"
+            android:background="#C47D12"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            tools:layout_editor_absoluteX="-13dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="692dp"
+            android:layout_height="698dp"
+            android:src="@drawable/epi2_removebg_preview"
+            tools:layout_editor_absoluteX="-150dp"
+            tools:layout_editor_absoluteY="64dp" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="357dp"
+            android:layout_height="205dp"
+            android:background="#40484d"
+            tools:layout_editor_absoluteX="27dp"
+            tools:layout_editor_absoluteY="166dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EPIs"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="180dp"
+            tools:layout_editor_absoluteY="109dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="75dp"
+            android:layout_height="69dp"
+            android:src="@drawable/epiorg"
+            tools:layout_editor_absoluteX="320dp"
+            tools:layout_editor_absoluteY="5dp" />
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="94dp"
+            android:layout_height="121dp"
+            tools:layout_editor_absoluteX="44dp"
+            tools:layout_editor_absoluteY="181dp"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="149dp"
+            android:layout_height="22dp"
+            android:text="Nome: "
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="159dp"
+            tools:layout_editor_absoluteY="196dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="149dp"
+            android:layout_height="33dp"
+            android:text="Tipo: "
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="159dp"
+            tools:layout_editor_absoluteY="230dp" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="123dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#C47D12"
+            android:text="DETALHES"
+            tools:layout_editor_absoluteX="241dp"
+            tools:layout_editor_absoluteY="311dp" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="123dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#FF0000"
+            android:text="EXCLUIR"
+            tools:layout_editor_absoluteX="44dp"
+            tools:layout_editor_absoluteY="311dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
