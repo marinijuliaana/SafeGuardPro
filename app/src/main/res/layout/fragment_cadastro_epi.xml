@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.CadastroEpiFragment">
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.CadastroFragment">
+
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="692dp"
+            android:layout_height="698dp"
+            android:src="@drawable/epi2_removebg_preview"
+            tools:layout_editor_absoluteX="-127dp"
+            tools:layout_editor_absoluteY="50dp" />
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/materialToolbar5"
+            android:layout_width="445dp"
+            android:layout_height="74dp"
+            android:background="#C47D12"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="-34dp" />
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="358dp"
+            android:layout_height="570dp"
+            android:background="#DDD5D5"
+            tools:layout_editor_absoluteX="26dp"
+            tools:layout_editor_absoluteY="128dp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CADASTRO DA EPI"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="77dp"
+            tools:layout_editor_absoluteY="151dp" />
+
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="249dp"
+            android:layout_height="53dp"
+            android:ems="10"
+            android:hint="Digite o nome da EPI "
+            android:inputType="text"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="227dp" />
+
+        <EditText
+            android:id="@+id/editTextText2"
+            android:layout_width="249dp"
+            android:layout_height="53dp"
+            android:ems="10"
+            android:hint="Digite a validade da EPI"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="309dp" />
+
+
+        <EditText
+            android:id="@+id/editTextText3"
+            android:layout_width="249dp"
+            android:layout_height="53dp"
+            android:ems="10"
+            android:hint="Digite o número do CA"
+            android:inputType="numberPassword"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="383dp" />
+
+        <EditText
+            android:id="@+id/editTextText4"
+            android:layout_width="249dp"
+            android:layout_height="53dp"
+            android:ems="10"
+            android:hint="Digite a validade do CA"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="460dp" />
+
+        <EditText
+            android:id="@+id/editTextText5"
+            android:layout_width="249dp"
+            android:layout_height="53dp"
+            android:ems="10"
+            android:hint="Digite o tipo da EPI"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="546dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="133dp"
+            android:layout_height="51dp"
+            android:backgroundTint="#008000"
+            android:text="CADASTRAR"
+            tools:layout_editor_absoluteX="231dp"
+            tools:layout_editor_absoluteY="626dp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="133dp"
+            android:layout_height="51dp"
+            android:backgroundTint="#008"
+            android:text="EDITAR"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="626dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="75dp"
+            android:layout_height="69dp"
+            android:src="@drawable/epiorg"
+            tools:layout_editor_absoluteX="320dp"
+            tools:layout_editor_absoluteY="5dp" />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
