@@ -1,102 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.FuncionarioFragment">
+    android:layout_height="match_parent">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.LoginFragment">
+        android:scaleType="centerCrop"
+        android:src="@drawable/epi2_removebg_preview" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FUNCIONÁRIOS"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rvFuncionarios"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/materialToolbar"
-            android:layout_width="424dp"
-            android:layout_height="74dp"
-            android:background="#C47D12"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            tools:layout_editor_absoluteX="-13dp"
-            tools:layout_editor_absoluteY="0dp" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvFuncionarios"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:listitem="@layout/list_item_funcionario" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="692dp"
-            android:layout_height="698dp"
-            android:src="@drawable/epi2_removebg_preview"
-            tools:layout_editor_absoluteX="-151dp"
-            tools:layout_editor_absoluteY="64dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="356dp"
-            android:layout_height="127dp"
-            android:background="#40484d"
-            tools:layout_editor_absoluteX="27dp"
-            tools:layout_editor_absoluteY="166dp" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FUNCIONÁRIOS"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="115dp"
-            tools:layout_editor_absoluteY="107dp" />
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="75dp"
-            android:layout_height="69dp"
-            android:src="@drawable/epiorg"
-            tools:layout_editor_absoluteX="320dp"
-            tools:layout_editor_absoluteY="5dp" />
-
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="85dp"
-            android:layout_height="90dp"
-            tools:layout_editor_absoluteX="44dp"
-            tools:layout_editor_absoluteY="185dp"
-            tools:src="@tools:sample/avatars" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="149dp"
-            android:layout_height="22dp"
-            android:text="Nome: "
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="159dp"
-            tools:layout_editor_absoluteY="185dp" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="149dp"
-            android:layout_height="33dp"
-            android:text="Código: "
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="159dp"
-            tools:layout_editor_absoluteY="219dp" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="151dp"
-            android:layout_height="35dp"
-            android:text="Cargo: "
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            tools:layout_editor_absoluteX="159dp"
-            tools:layout_editor_absoluteY="251dp" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</FrameLayout>
