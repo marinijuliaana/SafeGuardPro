@@ -1,134 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.FuncionarioFragment">
+    android:layout_height="match_parent">
 
-    <?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.LoginFragment">
+        android:scaleType="centerCrop"
+        android:src="@drawable/epi2_removebg_preview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/materialToolbar"
-            android:layout_width="424dp"
-            android:layout_height="74dp"
-            android:background="#C47D12"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            tools:layout_editor_absoluteX="-13dp"
-            tools:layout_editor_absoluteY="0dp" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/view"
+        android:layout_width="329dp"
+        android:layout_height="567dp"
+        android:backgroundTint="#DDD5D5"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3">
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="692dp"
-            android:layout_height="698dp"
-            android:src="@drawable/epi2_removebg_preview"
-            tools:layout_editor_absoluteX="-141dp"
-            tools:layout_editor_absoluteY="63dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="329dp"
-            android:layout_height="567dp"
-            android:background="#DDD5D5"
-            tools:layout_editor_absoluteX="41dp"
-            tools:layout_editor_absoluteY="135dp" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="MENU"
+                android:textSize="35sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="228dp"
-            android:layout_height="46dp"
-            android:backgroundTint="#40484d"
-            android:text="CADASTRAR FUNCIONÁRIO"
-            tools:layout_editor_absoluteX="91dp"
-            tools:layout_editor_absoluteY="211dp" />
+            <Button
+                android:id="@+id/btnCadastrarFuncionario"
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#40484d"
+                android:text="CADASTRAR FUNCIONÁRIO" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="75dp"
-            android:layout_height="69dp"
-            android:src="@drawable/epiorg"
-            tools:layout_editor_absoluteX="320dp"
-            tools:layout_editor_absoluteY="5dp" />
+            <Button
+                android:id="@+id/btnCadastrarEpi"
+                android:layout_width="228dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#40484d"
+                android:text="CADASTRAR EPI" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="228dp"
-            android:layout_height="46dp"
-            android:backgroundTint="#40484d"
-            android:text="CADASTRAR EPI"
-            tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="274dp" />
+            <Button
+                android:id="@+id/btnEditarFuncionario"
+                android:layout_width="228dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#40484d"
+                android:text="EDITAR FUNCIONÁRIO" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="228dp"
-            android:layout_height="46dp"
-            android:backgroundTint="#40484d"
-            android:text="EDITAR FUNCIONÁRIO"
-            tools:layout_editor_absoluteX="92dp"
-            tools:layout_editor_absoluteY="392dp" />
+            <Button
+                android:id="@+id/btnEditarEpi"
+                android:layout_width="228dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#40484d"
+                android:text="EDITAR EPI" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="228dp"
-            android:layout_height="46dp"
-            android:backgroundTint="#40484d"
-            android:text="EDITAR EPI"
-            tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="329dp" />
+            <Button
+                android:id="@+id/btnRelatorioFuncionario"
+                android:layout_width="228dp"
+                android:layout_height="52dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#40484d"
+                android:text="VER RELATÓRIO DO FUNCIONÁRIO" />
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="228dp"
-            android:layout_height="52dp"
-            android:backgroundTint="#40484d"
-            android:text="VER RELATÓRIO DO FUNCIONÁRIO"
-            tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="455dp" />
+            <Button
+                android:id="@+id/btnRelatorioEpi"
+                android:layout_width="228dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#40484d"
+                android:text="VER RELATÓRIO EPI" />
 
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="228dp"
-            android:layout_height="46dp"
-            android:backgroundTint="#40484d"
-            android:text="VER RELATÓRIO EPI"
-            tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="579dp" />
+            <Button
+                android:id="@+id/btnEntrega"
+                android:layout_width="228dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#40484d"
+                android:text="ENTREGA" />
 
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="228dp"
-            android:layout_height="46dp"
-            android:backgroundTint="#40484d"
-            android:text="ENTREGA"
-            tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="522dp" />
-
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="228dp"
-            android:layout_height="46dp"
-            android:backgroundTint="#40484d"
-            android:text="NOTA FISCAL"
-            tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="637dp" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="MENU"
-            android:textSize="35sp"
-            android:textStyle="bold"
-            tools:layout_editor_absoluteX="156dp"
-            tools:layout_editor_absoluteY="146dp" />
+            <Button
+                android:id="@+id/btnNotaFiscal"
+                android:layout_width="228dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#40484d"
+                android:text="NOTA FISCAL" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
-</FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
