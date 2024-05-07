@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageFundo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -18,9 +18,9 @@
         android:layout_height="373dp"
         android:backgroundTint="#DDD5D5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3">
+        app:layout_constraintEnd_toEndOf="@+id/imageFundo"
+        app:layout_constraintStart_toStartOf="@+id/imageFundo"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo">
 
 
         <LinearLayout
@@ -30,7 +30,7 @@
 
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tvEntrega"
                 android:layout_width="121dp"
                 android:layout_height="45dp"
                 android:text="Entrega"
@@ -38,43 +38,35 @@
                 android:layout_marginBottom="50dp"
                 android:layout_marginTop="10dp"
                 android:textSize="30sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="144dp"
-                tools:layout_editor_absoluteY="218dp" />
+                android:textStyle="bold"/>
 
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/edtcodigo"
                 android:layout_width="249dp"
                 android:layout_height="53dp"
                 android:ems="10"
                 android:hint="Digite o código"
                 android:layout_gravity="center"
                 android:layout_marginBottom="30dp"
-                android:inputType="text"
-                tools:layout_editor_absoluteX="81dp"
-                tools:layout_editor_absoluteY="297dp" />
+                android:inputType="text"/>
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/edtNomeEpi"
                 android:layout_width="249dp"
                 android:layout_height="53dp"
                 android:ems="10"
                 android:hint="Digite o nome  EPI "
                 android:layout_gravity="center"
                 android:layout_marginBottom="30dp"
-                android:inputType="text"
-                tools:layout_editor_absoluteX="81dp"
-                tools:layout_editor_absoluteY="378dp" />
+                android:inputType="text"/>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnEnviar"
                 android:layout_width="119dp"
                 android:layout_height="51dp"
                 android:backgroundTint="#008000"
                 android:text="ENVIAR"
-                tools:layout_editor_absoluteX="146dp"
-                tools:layout_editor_absoluteY="465dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="50dp"
                 android:layout_marginTop="5dp"/>

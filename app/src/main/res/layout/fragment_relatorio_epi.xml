@@ -3,17 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/epi2_removebg_preview" />
+    android:layout_height="match_parent"
+    android:background="@drawable/epi2_removebg_preview">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvEpi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="EPI'S"
@@ -29,8 +23,19 @@
         android:id="@+id/rvEpi"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEpi"
+        tools:listitem="@layout/list_relatorio_epi"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_add"
+        android:layout_gravity="end"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:listitem="@layout/fragment_relatorio_epi" />
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,7 +7,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageFundo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -18,8 +18,10 @@
         android:layout_width="347dp"
         android:layout_height="558dp"
         android:backgroundTint="#40484d"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="135dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,10 +40,10 @@
                 android:id="@+id/textView1"
                 android:layout_width="149dp"
                 android:layout_height="22dp"
-                android:text="Validade EPI: "
                 android:layout_margin="20dp"
-                android:layout_marginBottom="30dp"
                 android:layout_marginTop="60dp"
+                android:layout_marginBottom="30dp"
+                android:text="Validade EPI: "
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -49,10 +51,10 @@
                 android:id="@+id/textView2"
                 android:layout_width="149dp"
                 android:layout_height="22dp"
-                android:text="Validade CA: "
                 android:layout_margin="20dp"
-                android:layout_marginBottom="30dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="30dp"
+                android:text="Validade CA: "
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -60,9 +62,9 @@
                 android:id="@+id/textView3"
                 android:layout_width="149dp"
                 android:layout_height="22dp"
-                android:text="Número do CA: "
                 android:layout_margin="20dp"
                 android:layout_marginBottom="30dp"
+                android:text="Número do CA: "
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -70,10 +72,10 @@
                 android:id="@+id/textView4"
                 android:layout_width="301dp"
                 android:layout_height="108dp"
-                android:text="Modo de uso: "
                 android:layout_gravity="center"
-                android:layout_marginBottom="50dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="50dp"
+                android:text="Modo de uso: "
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 

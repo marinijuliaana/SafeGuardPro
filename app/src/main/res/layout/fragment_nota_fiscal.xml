@@ -6,9 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".view.LoginFragment">
 
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar"
+        android:layout_width="462dp"
+        android:layout_height="74dp"
+        android:background="#C47D12"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        tools:layout_editor_absoluteX="-43dp"
+        tools:layout_editor_absoluteY="0dp" />
+
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageFundo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -19,8 +29,10 @@
         android:layout_width="299dp"
         android:layout_height="340dp"
         android:backgroundTint="#DDD5D5"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="212dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageFundo"
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,47 +40,45 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tvNotaFiscal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NOTA FISCAL"
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
+                android:text="NOTA FISCAL"
                 android:textSize="25sp"
-                android:textStyle="bold"
-                tools:layout_editor_absoluteX="128dp"
-                tools:layout_editor_absoluteY="250dp" />
+                android:textStyle="bold"/>
 
             <EditText
-                android:id="@+id/editTextDate2"
+                android:id="@+id/edtDataEmissao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
                 android:ems="10"
                 android:hint="Data Emissão"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
-                android:inputType="date"/>
+                android:inputType="date" />
 
             <EditText
-                android:id="@+id/editTextText6"
+                android:id="@+id/edtNumNota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Número da nota fiscal"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
-                android:inputType="number"/>
+                android:ems="10"
+                android:hint="Número da nota fiscal"
+                android:inputType="number" />
 
             <Button
                 android:id="@+id/btnEmitir"
                 android:layout_width="119dp"
                 android:layout_height="51dp"
-                android:backgroundTint="#008000"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
+                android:backgroundTint="#008000"
                 android:text="EMITIR" />
 
 

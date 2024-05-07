@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageFundo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
@@ -22,9 +22,9 @@
         android:backgroundTint="#DDD5D5"
 
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="@+id/imageFundo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3">
+        app:layout_constraintTop_toTopOf="@+id/imageFundo">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -72,9 +72,9 @@
                 android:id="@+id/edtsenha"
                 android:layout_width="249dp"
                 android:layout_height="53dp"
+                android:layout_marginTop="30dp"
                 android:ems="10"
                 android:hint="Digite sua senha "
-                android:layout_marginTop="30dp"
                 android:inputType="numberPassword"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -84,9 +84,9 @@
                 android:id="@+id/edtCargo"
                 android:layout_width="249dp"
                 android:layout_height="53dp"
+                android:layout_marginTop="30dp"
                 android:ems="10"
                 android:hint="Digite seu cargo"
-                android:layout_marginTop="30dp"
                 android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
