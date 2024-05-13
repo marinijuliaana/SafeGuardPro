@@ -12,7 +12,7 @@ import com.eclipse.safeguardpro.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     // criar a toolbar
-    private lateinit var AppBarConfiguration: AppBarConfiguration
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     //criar a navegação
     private lateinit var navController: NavController
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(binding.fragmentContainerView.id) as NavHostFragment
         navController = navHostFragment.navController
-        AppBarConfiguration = AppBarConfiguration(navController.graph)
-        binding.toolbar.setupWithNavController(navController, AppBarConfiguration)
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+        binding.toolbar.setupWithNavController(navController, appBarConfiguration)
     }
 }
