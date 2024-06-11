@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.eclipse.safeguardpro.R
 import com.eclipse.safeguardpro.databinding.FragmentLoginBinding
-import com.eclipse.safeguardpro.databinding.FragmentRelatorioEpiBinding
 
 class LoginFragment : Fragment() {
     //criar o binding

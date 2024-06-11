@@ -44,7 +44,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
-                android:id="@+id/edtnome"
+                android:id="@+id/edtNome"
                 android:layout_width="249dp"
                 android:layout_height="53dp"
                 android:layout_gravity="center"
@@ -57,19 +57,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvNome" />
 
             <EditText
-                android:id="@+id/edtcodigo"
+                android:id="@+id/edtCpf"
                 android:layout_width="249dp"
                 android:layout_height="53dp"
                 android:layout_marginTop="30dp"
                 android:ems="10"
-                android:hint="Digite seu código"
+                android:hint="Digite seu Cpf"
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edtCargo" />
 
             <EditText
-                android:id="@+id/edtsenha"
+                android:id="@+id/edtSenha"
                 android:layout_width="249dp"
                 android:layout_height="53dp"
                 android:layout_marginTop="30dp"
@@ -78,7 +78,7 @@
                 android:inputType="numberPassword"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtnome" />
+                app:layout_constraintTop_toBottomOf="@+id/edtNome" />
 
             <EditText
                 android:id="@+id/edtCargo"
@@ -90,7 +90,7 @@
                 android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtsenha" />
+                app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
 
             <Button
                 android:id="@+id/btnCadastrar"
@@ -99,19 +99,19 @@
                 android:backgroundTint="#008000"
                 android:text="CADASTRAR"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btnEditar"
-                app:layout_constraintTop_toBottomOf="@+id/edtcodigo" />
+                app:layout_constraintEnd_toStartOf="@+id/btnDeletar"
+                app:layout_constraintTop_toBottomOf="@+id/edtCpf" />
 
             <Button
-                android:id="@+id/btnEditar"
+                android:id="@+id/btnDeletar"
                 android:layout_width="133dp"
                 android:layout_height="51dp"
-                android:layout_marginTop="36dp"
-                android:layout_marginEnd="35dp"
-                android:backgroundTint="#008"
-                android:text="EDITAR"
+                android:layout_marginEnd="40dp"
+                android:backgroundTint="#B60505"
+                android:text="DELETAR"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtcodigo" />
+                app:layout_constraintTop_toBottomOf="@+id/edtCpf" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

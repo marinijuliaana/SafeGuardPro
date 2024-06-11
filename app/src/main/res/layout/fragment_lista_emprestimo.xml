@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/epi2_removebg_preview">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
-        android:id="@+id/tvEpi"
+        android:id="@+id/tvEmprestimo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="EPI'S"
+        android:text="EMPRESTIMOS"
         android:textColor="@color/black"
         android:textSize="25sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/rvEpi"
+        app:layout_constraintBottom_toTopOf="@+id/rvEmprestimos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvEpi"
+        android:id="@+id/rvEmprestimos"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/btnAdd"
-        app:layout_constraintTop_toBottomOf="@+id/tvEpi"
-        tools:listitem="@layout/list_relatorio_epi"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvEmprestimo"
+        tools:listitem="@layout/list_item_emprestimo"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnAdd"

@@ -3,11 +3,8 @@ package com.eclipse.safeguardpro.view.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.eclipse.safeguardpro.databinding.ListItemFuncionarioBinding
-import com.eclipse.safeguardpro.databinding.ListRelatorioEpiBinding
+import com.eclipse.safeguardpro.databinding.ListItemEpiBinding
 import com.eclipse.safeguardpro.service.model.Epi
-import com.eclipse.safeguardpro.service.model.Funcionario
-import com.eclipse.safeguardpro.view.RelatorioEpiFragment
 
 class EpiAdapter(
     epi: List<Epi>?,
@@ -18,7 +15,7 @@ class EpiAdapter(
     //criar uma lista vazia de pessoas
     private var epiList: List<Epi> = arrayListOf()
 
-    class EpiViewHolder(private val binding: ListRelatorioEpiBinding) :
+    class EpiViewHolder(private val binding: ListItemEpiBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         //carrega as informações da pessoa na lista
@@ -37,7 +34,7 @@ class EpiAdapter(
     ): EpiViewHolder {
         //configura o binding da lista
         val listRelatorioEpiBinding =
-            ListRelatorioEpiBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ListItemEpiBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return EpiViewHolder(listRelatorioEpiBinding)
     }
 

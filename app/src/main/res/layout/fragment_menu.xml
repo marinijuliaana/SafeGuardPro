@@ -50,6 +50,16 @@
                 android:text="CADASTRAR FUNCIONÁRIO" />
 
             <Button
+                android:id="@+id/btnRelatorioFuncionario"
+                android:layout_width="228dp"
+                android:layout_height="52dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#40484d"
+                android:text="VER RELATÓRIO DO FUNCIONÁRIO" />
+
+            <Button
                 android:id="@+id/btnCadastrarEpi"
                 android:layout_width="228dp"
                 android:layout_height="46dp"
@@ -59,35 +69,6 @@
                 android:backgroundTint="#40484d"
                 android:text="CADASTRAR EPI" />
 
-            <Button
-                android:id="@+id/btnEditarFuncionario"
-                android:layout_width="228dp"
-                android:layout_height="46dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="#40484d"
-                android:text="EDITAR FUNCIONÁRIO" />
-
-            <Button
-                android:id="@+id/btnEditarEpi"
-                android:layout_width="228dp"
-                android:layout_height="46dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="#40484d"
-                android:text="EDITAR EPI" />
-
-            <Button
-                android:id="@+id/btnRelatorioFuncionario"
-                android:layout_width="228dp"
-                android:layout_height="52dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="#40484d"
-                android:text="VER RELATÓRIO DO FUNCIONÁRIO" />
 
             <Button
                 android:id="@+id/btnRelatorioEpi"
@@ -107,18 +88,17 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:backgroundTint="#40484d"
-                android:text="ENTREGA" />
+                android:text="REALIZAR ENTREGA" />
 
             <Button
-                android:id="@+id/btnNotaFiscal"
+                android:id="@+id/btnRelatorioEntrega"
                 android:layout_width="228dp"
                 android:layout_height="46dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:backgroundTint="#40484d"
-                android:text="NOTA FISCAL" />
-
+                android:text="RELATÓRIO DE ENTREGA" />
 
         </LinearLayout>
 

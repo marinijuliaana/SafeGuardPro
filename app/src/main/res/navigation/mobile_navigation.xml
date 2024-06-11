@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/relatorioEpiFragment"
-        android:name="com.eclipse.safeguardpro.view.RelatorioEpiFragment"
+        android:name="com.eclipse.safeguardpro.view.ListaEpiFragment"
         android:label="RelatorioEpiFragment" />
     <fragment
         android:id="@+id/cadastroFragment"
@@ -20,28 +20,26 @@
         android:label="cadastro"
         tools:layout="@layout/fragment_cadastro" />
     <fragment
-        android:id="@+id/detalhesFragment"
-        android:name="com.eclipse.safeguardpro.view.DetalhesFragment"
-        android:label="DetalhesFragment" />
+        android:id="@+id/cadastroEpiFragment"
+        android:name="com.eclipse.safeguardpro.view.CadastroEpiFragment"
+        android:label="CadastroEpiFragment" />
     <fragment
         android:id="@+id/listaFuncionarioFragment"
         android:name="com.eclipse.safeguardpro.view.ListaFuncionarioFragment"
         android:label="ListaFuncionarioFragment" />
-    <fragment
-        android:id="@+id/notaFiscalFragment"
-        android:name="com.eclipse.safeguardpro.view.NotaFiscalFragment"
-        android:label="NotaFiscalFragment" />
+
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.eclipse.safeguardpro.view.MenuFragment"
         android:label="MenuFragment" />
     <fragment
-        android:id="@+id/entregaFragment"
-        android:name="com.eclipse.safeguardpro.view.EntregaFragment"
+        android:id="@+id/emprestimoFragment"
+        android:name="com.eclipse.safeguardpro.view.EmprestimoFragment"
         android:label="EntregaFragment" />
+
     <fragment
-        android:id="@+id/cadastroEpiFragment"
-        android:name="com.eclipse.safeguardpro.view.CadastroEpiFragment"
-        android:label="CadastroEpiFragment" />
+        android:id="@+id/listaEmprestimoFragment"
+        android:name="com.eclipse.safeguardpro.view.ListaEmprestimoFragment"
+        android:label="ListaEmprestimoFragment" />
 
 </navigation>

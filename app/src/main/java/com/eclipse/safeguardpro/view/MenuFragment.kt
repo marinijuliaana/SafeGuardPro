@@ -36,26 +36,21 @@ class MenuFragment : Fragment() {
         binding.btnCadastrarEpi.setOnClickListener {
             findNavController().navigate(R.id.cadastroEpiFragment)
         }
+
         binding.btnCadastrarFuncionario.setOnClickListener {
             findNavController().navigate(R.id.cadastroFragment)
         }
-        binding.btnEditarEpi.setOnClickListener {
-            findNavController().navigate(R.id.cadastroEpiFragment)
-        }
-        binding.btnEditarFuncionario.setOnClickListener {
-            findNavController().navigate(R.id.cadastroFragment)
-        }
+
         binding.btnRelatorioEpi.setOnClickListener {
             findNavController().navigate(R.id.relatorioEpiFragment)
         }
+
         binding.btnRelatorioFuncionario.setOnClickListener {
             findNavController().navigate(R.id.listaFuncionarioFragment)
         }
+
         binding.btnEntrega.setOnClickListener {
             findNavController().navigate(R.id.listaFuncionarioFragment)
-        }
-        binding.btnNotaFiscal.setOnClickListener {
-            findNavController().navigate(R.id.notaFiscalFragment)
         }
     }
 }

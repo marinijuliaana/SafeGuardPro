@@ -10,124 +10,117 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/epi2_removebg_preview"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:src="@drawable/epi2_removebg_preview" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/view"
-        android:layout_width="358dp"
-        android:layout_height="570dp"
+        android:layout_width="322dp"
+        android:layout_height="535dp"
         android:backgroundTint="#DDD5D5"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageFundo"
-        app:layout_constraintVertical_bias="0.54">
+        app:layout_constraintEnd_toEndOf="@+id/imageFundo"
+        app:layout_constraintStart_toStartOf="@+id/imageFundo"
+        app:layout_constraintTop_toTopOf="@+id/imageFundo">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="539dp"
+            android:orientation="vertical">
 
 
             <TextView
-                android:id="@+id/tvNome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:text="CADASTRO DA EPI"
+                android:id="@+id/tvEntrega"
+                android:layout_width="121dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:text="Entrega"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/edtNomeEquipamento"
+                android:id="@+id/edtDataEntrega"
                 android:layout_width="249dp"
                 android:layout_height="53dp"
+                android:layout_gravity="center"
+                android:layout_margin="25dp"
                 android:ems="10"
-                android:hint="Digite o Nome do Equipamento "
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:hint="Digite a Data de Entrega"
                 android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvNome" />
+                app:layout_constraintTop_toBottomOf="@+id/tvEntrega" />
 
             <EditText
-                android:id="@+id/edtValidadeEpi"
+                android:id="@+id/edtCpf"
                 android:layout_width="249dp"
                 android:layout_height="53dp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
                 android:ems="10"
-                android:hint="Digite a validade da Epi"
+                android:hint="Digite o seu CPF"
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtNomeEquipamento" />
-
+                app:layout_constraintTop_toBottomOf="@+id/edtDataEntrega" />
 
             <EditText
-                android:id="@+id/edtNumeroCa"
+                android:id="@+id/edtCa"
                 android:layout_width="249dp"
                 android:layout_height="53dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:layout_margin="25dp"
                 android:ems="10"
                 android:hint="Digite o número do Ca"
-                android:inputType="numberPassword"
+                android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtValidadeEpi" />
+                app:layout_constraintTop_toBottomOf="@+id/edtCpf" />
 
             <EditText
-                android:id="@+id/edtTipoProtecao"
+                android:id="@+id/edtDataDevolucao"
                 android:layout_width="249dp"
                 android:layout_height="53dp"
+                android:layout_gravity="center"
+                android:layout_margin="25dp"
                 android:ems="10"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:hint="Digite o tipo de protecao"
+                android:hint="Digite a Data de Devolução"
                 android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtNumeroCa" />
+                app:layout_constraintTop_toBottomOf="@+id/edtCa" />
 
-            <EditText
-                android:id="@+id/edtTempoUso"
-                android:layout_width="249dp"
-                android:layout_height="53dp"
-                android:layout_marginTop="20dp"
-                android:ems="10"
-                android:hint="Digite o tempo de uso"
-                android:inputType="text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtTipoProtecao" />
 
             <Button
-                android:id="@+id/btnCadastrar"
-                android:layout_width="133dp"
+                android:id="@+id/btnEnviar"
+                android:layout_width="119dp"
                 android:layout_height="51dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="24dp"
                 android:backgroundTint="#008000"
-                android:text="CADASTRAR"
+                android:text="ENVIAR"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/btnDeletar"
-                app:layout_constraintTop_toBottomOf="@+id/edtTempoUso" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtDataDevolucao" />
 
             <Button
                 android:id="@+id/btnDeletar"
-                android:layout_width="133dp"
+                android:layout_width="119dp"
                 android:layout_height="51dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginBottom="56dp"
+                android:layout_gravity="center"
                 android:backgroundTint="#B60505"
                 android:text="DELETAR"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintEnd_toStartOf="@+id/btnEnviar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtDataDevolucao" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
