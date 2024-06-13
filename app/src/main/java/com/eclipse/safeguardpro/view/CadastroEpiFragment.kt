@@ -14,6 +14,7 @@ import com.eclipse.safeguardpro.R
 import com.eclipse.safeguardpro.databinding.FragmentCadastroBinding
 import com.eclipse.safeguardpro.databinding.FragmentCadastroEpiBinding
 import com.eclipse.safeguardpro.service.model.Epi
+import com.eclipse.safeguardpro.service.model.Login
 import com.eclipse.safeguardpro.viewmodel.EmprestimoViewModel
 import com.eclipse.safeguardpro.viewmodel.EpiViewModel
 import java.time.LocalDateTime
@@ -29,7 +30,7 @@ class CadastroEpiFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View{
+    ): View {
         _binding = FragmentCadastroEpiBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -43,14 +44,14 @@ class CadastroEpiFragment : Fragment() {
         }
 
         binding.btnCadastrar.setOnClickListener {
-            var nome_equipamento = binding.edtNomeEquipamento.editableText.toString()
-            var validade_epi = binding.edtValidadeEpi.editableText.toString()
-            var tipo_protecao = binding.edtTipoProtecao.editableText.toString()
-            var numero_ca = binding.edtNumeroCa.editableText.toString().toInt()
-            var tempo_uso = binding.edtTempoUso.editableText.toString()
+            val nome_equipamento = binding.edtNomeEquipamento.editableText.toString()
+            val validade_epi = binding.edtValidadeEpi.editableText.toString()
+            val tipo_protecao = binding.edtTipoProtecao.editableText.toString()
+            val numero_ca = binding.edtNumeroCa.editableText.toString().toInt()
+            val tempo_uso = binding.edtTempoUso.editableText.toString()
 
-            if (nome_equipamento != "" && validade_epi != "" && tipo_protecao != "" && numero_ca != 0 && tempo_uso != ""){
-                val epi = Epi (
+            if (nome_equipamento != "" && validade_epi != "" && tipo_protecao != "" && numero_ca != 0 && tempo_uso != "") {
+                val epi = Epi(
                     nome_equipamento = nome_equipamento,
                     validade_epi = validade_epi,
                     tipo_protecao = tipo_protecao,
@@ -72,14 +73,14 @@ class CadastroEpiFragment : Fragment() {
                 binding.edtTempoUso.editableText.clear()
 
                 findNavController().navigateUp()
-            }else {
+            } else {
                 Toast.makeText(requireContext(), "Digite os dados", Toast.LENGTH_LONG).show()
             }
         }
 
         binding.btnDeletar.setOnClickListener {
             AlertDialog.Builder(requireContext())
-                .setTitle("Exclusão de pessoa")
+                .setTitle("Exclusão de EPI")
                 .setMessage("você realmente deseja excluir ?")
                 .setPositiveButton("sim") { _, _ ->
                     viewModel.delete(viewModel.epi.value?.id ?: 0)
@@ -90,19 +91,33 @@ class CadastroEpiFragment : Fragment() {
         }
 
         viewModel.epi.observe(viewLifecycleOwner) { epi ->
-            binding.edtNomeEquipamento.setText(epi.nome_equipamento)
-            binding.edtValidadeEpi.setText(epi.validade_epi)
-            binding.edtNumeroCa.setText(epi.numero_ca)
-            binding.edtTipoProtecao.setText(epi.tipo_protecao)
-            binding.edtTempoUso.setText(epi.tempo_uso)
+            if (Login.userAdmin) {
+                binding.edtNomeEquipamento.setText(epi.nome_equipamento)
+                binding.edtValidadeEpi.setText(epi.validade_epi)
+                binding.edtNumeroCa.setText(epi.numero_ca)
+                binding.edtTipoProtecao.setText(epi.tipo_protecao)
+                binding.edtTempoUso.setText(epi.tempo_uso)
 
-            binding.btnDeletar.visibility = View.VISIBLE
+                binding.btnDeletar.visibility = View.VISIBLE
+            } else {
+                binding.edtNomeEquipamento.setText(epi.nome_equipamento)
+                binding.edtNomeEquipamento.isClickable = false
+                binding.edtValidadeEpi.setText(epi.validade_epi)
+                binding.edtValidadeEpi.isClickable = false
+                binding.edtNumeroCa.setText(epi.numero_ca)
+                binding.edtNumeroCa.isClickable = false
+                binding.edtTipoProtecao.setText(epi.tipo_protecao)
+                binding.edtTipoProtecao.isClickable = false
+                binding.edtTempoUso.setText(epi.tempo_uso)
+                binding.edtTempoUso.isClickable = false
+
+                binding.btnCadastrar.visibility = View.GONE
+            }
         }
 
         viewModel.erro.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), "Erro $it", Toast.LENGTH_LONG).show()
             Log.e("erro Emprestimo", it)
         }
-
     }
 }

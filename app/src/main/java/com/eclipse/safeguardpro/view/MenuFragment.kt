@@ -17,6 +17,7 @@ import com.eclipse.safeguardpro.R
 import com.eclipse.safeguardpro.databinding.ActivityMainBinding
 import com.eclipse.safeguardpro.databinding.FragmentCadastroEpiBinding
 import com.eclipse.safeguardpro.databinding.FragmentMenuBinding
+import com.eclipse.safeguardpro.service.model.Login
 
 class MenuFragment : Fragment() {
     //criar o binding
@@ -26,19 +27,43 @@ class MenuFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentMenuBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if (Login.userAdmin){
+            binding.btnRelatorioFuncionario.visibility = View.VISIBLE
+            binding.btnCadastrarEpi.visibility = View.VISIBLE
+            binding.btnRelatorioEntrega.visibility = View.VISIBLE
+
+            binding.btnCadastrarFuncionario.text = "CADASTRAR FUNCIONÁRIO"
+            binding.btnRelatorioEpi.text = "VER RELATÓRIO EPI"
+        } else {
+            binding.btnRelatorioFuncionario.visibility = View.GONE
+            binding.btnCadastrarEpi.visibility = View.GONE
+            binding.btnRelatorioEntrega.visibility = View.GONE
+
+            binding.btnCadastrarFuncionario.text = "FUNCIONÁRIO"
+            binding.btnRelatorioEpi.text = "MEUS EPIs"
+        }
+
         binding.btnCadastrarEpi.setOnClickListener {
             findNavController().navigate(R.id.cadastroEpiFragment)
         }
 
         binding.btnCadastrarFuncionario.setOnClickListener {
-            findNavController().navigate(R.id.cadastroFragment)
+            if (Login.userAdmin){
+                val funcionarioBundle = Bundle()
+                funcionarioBundle.putInt("funcionarioId", Login.userId)
+                arguments = funcionarioBundle
+                findNavController().navigate(R.id.cadastroFragment, arguments)
+            } else {
+                findNavController().navigate(R.id.cadastroFragment)
+            }
         }
 
         binding.btnRelatorioEpi.setOnClickListener {

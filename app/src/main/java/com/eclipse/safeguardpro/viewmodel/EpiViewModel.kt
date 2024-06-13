@@ -10,7 +10,7 @@ import com.eclipse.safeguardpro.service.repository.EpiRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class EpiViewModel(application: Application) : AndroidViewModel(application){
+class EpiViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = EpiRepository(application)
 
@@ -54,7 +54,7 @@ class EpiViewModel(application: Application) : AndroidViewModel(application){
     fun update(epi: Epi) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val createdEpi = repository.updateEpi(epi.id,epi)
+                val createdEpi = repository.updateEpi(epi.id, epi)
                 mCreatedEpi.postValue(createdEpi)
             } catch (e: Exception) {
                 mErro.postValue(e.message)
@@ -84,10 +84,10 @@ class EpiViewModel(application: Application) : AndroidViewModel(application){
 
 
     fun delete(id: Int) {
-        viewModelScope.launch(Dispatchers.IO){
+        viewModelScope.launch(Dispatchers.IO) {
             try {
                 mDeletedEpi.postValue(repository.deleteEpi(id))
-            }catch (e: Exception) {
+            } catch (e: Exception) {
                 mErro.postValue(e.message)
             }
         }

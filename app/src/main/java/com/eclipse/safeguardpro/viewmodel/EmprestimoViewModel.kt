@@ -42,7 +42,6 @@ class EmprestimoViewModel (application: Application) : AndroidViewModel(applicat
             } catch (e: Exception) {
                 mErro.postValue(e.message)
             }
-
         }
     }
 

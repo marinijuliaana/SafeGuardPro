@@ -7,10 +7,9 @@ import com.eclipse.safeguardpro.databinding.ListItemEpiBinding
 import com.eclipse.safeguardpro.service.model.Epi
 
 class EpiAdapter(
-    epi: List<Epi>?,
+    epis: List<Epi>?,
     private val clickListListener: (Epi) -> Unit
-) :
-    RecyclerView.Adapter<EpiAdapter.EpiViewHolder>() {
+) : RecyclerView.Adapter<EpiAdapter.EpiViewHolder>() {
 
     //criar uma lista vazia de pessoas
     private var epiList: List<Epi> = arrayListOf()
@@ -52,6 +51,4 @@ class EpiAdapter(
         epiList = list
         notifyDataSetChanged()
     }
-
-
 }

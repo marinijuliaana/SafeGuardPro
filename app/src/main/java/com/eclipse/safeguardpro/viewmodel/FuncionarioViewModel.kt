@@ -26,7 +26,7 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
     private val mCreatedFuncionario = MutableLiveData<Funcionario>()
     val createdfuncionario: LiveData<Funcionario> = mCreatedFuncionario
 
-    private val mDeletedFuncionario =MutableLiveData<Boolean>()
+    private val mDeletedFuncionario = MutableLiveData<Boolean>()
     val deleteFuncionario: LiveData<Boolean> = mDeletedFuncionario
 
     //erro
@@ -86,10 +86,10 @@ class FuncionarioViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     fun delete(id: Int) {
-        viewModelScope.launch(Dispatchers.IO){
+        viewModelScope.launch(Dispatchers.IO) {
             try {
                 mDeletedFuncionario.postValue(repository.deleteFuncionario(id))
-            }catch (e: Exception) {
+            } catch (e: Exception) {
                 mErro.postValue(e.message)
             }
         }

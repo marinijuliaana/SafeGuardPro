@@ -29,7 +29,7 @@ class ListaFuncionarioFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentListaFuncionarioBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -59,10 +59,9 @@ class ListaFuncionarioFragment : Fragment() {
 
         viewModel.erro.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), "Erro $it", Toast.LENGTH_LONG).show()
-            Log.e("erro Emprestimo", it)
+            Log.e("erro funcionarios", it)
         }
 
         viewModel.loadFuncionarios()
     }
 }
-

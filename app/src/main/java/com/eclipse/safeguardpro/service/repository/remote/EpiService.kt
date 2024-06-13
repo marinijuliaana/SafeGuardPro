@@ -44,6 +44,6 @@ interface EpiService {
         @Part("numero_ca") numero_ca: RequestBody,
     ): Response<Epi>
 
-    @DELETE("delete_epis    /{epi_id}")
+    @DELETE("delete_epis/{epi_id}")
     suspend fun deleteEpiById(@Part("epi_id")id: Int): Response<Epi>
 }

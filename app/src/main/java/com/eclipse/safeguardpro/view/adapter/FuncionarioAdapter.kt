@@ -9,8 +9,7 @@ import com.eclipse.safeguardpro.service.model.Funcionario
 class FuncionarioAdapter(
     funcionario: List<Funcionario>?,
     private val clickListListener: (Funcionario) -> Unit
-) :
-    RecyclerView.Adapter<FuncionarioAdapter.FuncionarioViewHolder>() {
+) : RecyclerView.Adapter<FuncionarioAdapter.FuncionarioViewHolder>() {
 
     //criar uma lista vazia de pessoas
     private var funcionarioList: List<Funcionario> = arrayListOf()
@@ -52,6 +51,4 @@ class FuncionarioAdapter(
         funcionarioList = list
         notifyDataSetChanged()
     }
-
-
 }

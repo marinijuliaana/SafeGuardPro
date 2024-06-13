@@ -32,7 +32,7 @@ class ListaEmprestimoFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentListaEmprestimoBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -43,7 +43,7 @@ class ListaEmprestimoFragment : Fragment() {
         //Quando clicar em algum item da lista
         adapter = EmprestimoAdapter(viewModel.emprestimoList.value) { emprestimo ->
             val emprestimoBundle = Bundle()
-            emprestimoBundle.putInt("funcionarioId", emprestimo.id)
+            emprestimoBundle.putInt("emprestimoId", emprestimo.id)
             arguments = emprestimoBundle
             findNavController().navigate(R.id.emprestimoFragment, arguments)
         }
@@ -63,7 +63,7 @@ class ListaEmprestimoFragment : Fragment() {
 
         viewModel.erro.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), "Erro $it", Toast.LENGTH_LONG).show()
-            Log.e("erro Emprestimo", it)
+            Log.e("erro Emprestimos", it)
         }
 
         viewModel.loadEmprestimos()

@@ -12,15 +12,21 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.eclipse.safeguardpro.R
 import com.eclipse.safeguardpro.databinding.FragmentListaEpiBinding
+import com.eclipse.safeguardpro.service.model.Epi
+import com.eclipse.safeguardpro.service.model.Login
 import com.eclipse.safeguardpro.view.adapter.EpiAdapter
+import com.eclipse.safeguardpro.viewmodel.EmprestimoViewModel
 import com.eclipse.safeguardpro.viewmodel.EpiViewModel
 
 class ListaEpiFragment : Fragment() {
 
     private val viewModel: EpiViewModel by viewModels()
+    private val viewModelEmprestimo: EmprestimoViewModel by viewModels()
 
     //Chamar adapter
     private lateinit var adapter: EpiAdapter
+
+    private val episFuncionario = mutableListOf<Epi>()
 
     //criar o binding
     private var _binding: FragmentListaEpiBinding? = null
@@ -30,10 +36,9 @@ class ListaEpiFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentListaEpiBinding.inflate(inflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,15 +60,30 @@ class ListaEpiFragment : Fragment() {
         binding.btnAdd.setOnClickListener {
             findNavController().navigate(R.id.cadastroEpiFragment)
         }
-        viewModel.epiList.observe(viewLifecycleOwner) {
-            adapter.updateEpi(it)
+
+        viewModel.epi.observe(viewLifecycleOwner) { epi ->
+            episFuncionario.add(epi)
+//            TODO testar aqui ou na linha 81
+            adapter.updateEpi(episFuncionario)
         }
 
         viewModel.erro.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), "Erro $it", Toast.LENGTH_LONG).show()
-            Log.e("erro Emprestimo", it)
+            Log.e("erro epis", it)
         }
 
-        viewModel.loadEpis()
+        viewModelEmprestimo.emprestimoList.observe(viewLifecycleOwner) { listEntregas ->
+            val entregasFuncionario = listEntregas.filter { it.funcionario_id == Login.userId }
+
+            entregasFuncionario.forEach {
+                viewModel.getEpi(it.epi_id)
+            }
+
+//            TODO testar aqui ou na linha 65
+            adapter.updateEpi(episFuncionario)
+            Toast.makeText(requireContext(), "Epis: $listEntregas", Toast.LENGTH_LONG).show()
+        }
+
+        viewModelEmprestimo.loadEmprestimos()
     }
 }

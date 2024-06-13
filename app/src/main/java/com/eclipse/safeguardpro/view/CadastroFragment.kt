@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.eclipse.safeguardpro.databinding.FragmentCadastroBinding
 import com.eclipse.safeguardpro.service.model.Funcionario
+import com.eclipse.safeguardpro.service.model.Login
 import com.eclipse.safeguardpro.viewmodel.FuncionarioViewModel
 
 class CadastroFragment : Fragment() {
@@ -39,14 +40,15 @@ class CadastroFragment : Fragment() {
         }
 
         binding.btnCadastrar.setOnClickListener {
-            var nome = binding.edtNome.editableText.toString()
-            var senha = binding.edtSenha.editableText.toString()
-            var cargo = binding.edtCargo.editableText.toString()
-            var cpf = binding.edtCpf.editableText.toString().toInt()
+            val nome = binding.edtNome.editableText.toString()
+            val senha = binding.edtSenha.editableText.toString()
+            val cargo = binding.edtCargo.editableText.toString()
+            val cpf = binding.edtCpf.editableText.toString().toInt()
+//            TODO Add o checkbox no xml
+//            val admin = binding.chkAdmin.isChecked()
 
-
-            if (nome!= "" && senha != "" && cargo != "" && cpf != 0 ){
-                val funcionario = Funcionario (
+            if (nome != "" && senha != "" && cargo != "" && cpf != 0) {
+                val funcionario = Funcionario(
                     nome = nome,
                     cpf = cpf,
                     cargo = cargo,
@@ -66,10 +68,9 @@ class CadastroFragment : Fragment() {
                 binding.edtSenha.editableText.clear()
 
                 findNavController().navigateUp()
-            }else {
+            } else {
                 Toast.makeText(requireContext(), "Digite os dados", Toast.LENGTH_LONG).show()
             }
-
 
             binding.btnDeletar.setOnClickListener {
                 AlertDialog.Builder(requireContext())
@@ -84,12 +85,25 @@ class CadastroFragment : Fragment() {
             }
 
             viewModel.funcionario.observe(viewLifecycleOwner) { funcionario ->
-                binding.edtNome.setText(funcionario.nome)
-                binding.edtCargo.setText(funcionario.cargo)
-                binding.edtCpf.setText(funcionario.cpf)
-                binding.edtSenha.setText(funcionario.senha)
+                if (Login.userAdmin) {
+                    binding.edtNome.setText(funcionario.nome)
+                    binding.edtCargo.setText(funcionario.cargo)
+                    binding.edtCpf.setText(funcionario.cpf)
+                    binding.edtSenha.setText(funcionario.senha)
 
-                binding.btnDeletar.visibility = View.VISIBLE
+                    binding.btnDeletar.visibility = View.VISIBLE
+                } else {
+                    binding.edtNome.setText(funcionario.nome)
+                    binding.edtNome.isClickable = false
+                    binding.edtCargo.setText(funcionario.cargo)
+                    binding.edtCargo.isClickable = false
+                    binding.edtCpf.setText(funcionario.cpf)
+                    binding.edtCpf.isClickable = false
+                    binding.edtSenha.setText(funcionario.senha)
+                    binding.edtSenha.isClickable = false
+
+                    binding.btnCadastrar.visibility = View.GONE
+                }
             }
 
             viewModel.erro.observe(viewLifecycleOwner) {

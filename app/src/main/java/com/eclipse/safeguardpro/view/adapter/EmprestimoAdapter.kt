@@ -9,7 +9,7 @@ import com.eclipse.safeguardpro.service.model.Emprestimo
 import com.eclipse.safeguardpro.service.model.Funcionario
 
 class EmprestimoAdapter (
-    emprestimo: List<Emprestimo>?,
+    emprestimos: List<Emprestimo>?,
     private val clickListListener: (Emprestimo) -> Unit
 ):
     RecyclerView.Adapter<EmprestimoAdapter.EmprestimoViewHolder>() {
@@ -33,11 +33,11 @@ class EmprestimoAdapter (
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): EmprestimoAdapter.EmprestimoViewHolder {
+    ): EmprestimoViewHolder {
         //configura o binding da lista
         val listItemEmprestimoBinding =
             ListItemEmprestimoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return EmprestimoAdapter.EmprestimoViewHolder(listItemEmprestimoBinding)
+        return EmprestimoViewHolder(listItemEmprestimoBinding)
     }
 
     override fun getItemCount(): Int {
@@ -45,7 +45,7 @@ class EmprestimoAdapter (
         return emprestimoList.count()
     }
 
-    override fun onBindViewHolder(holder: EmprestimoAdapter.EmprestimoViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: EmprestimoViewHolder, position: Int) {
         holder.bind(emprestimoList[position], clickListListener)
     }
 
@@ -54,5 +54,4 @@ class EmprestimoAdapter (
         emprestimoList = list
         notifyDataSetChanged()
     }
-
 }

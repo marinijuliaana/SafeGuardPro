@@ -52,7 +52,6 @@ class EmprestimoFragment : Fragment() {
             val cpf = binding.edtCpf.editableText.toString().toInt()
             val numero_ca = binding.edtCa.editableText.toString().toInt()
 
-
             if (data_entrega != "" && data_devolucao != "" && numero_ca != 0 && cpf != 0) {
 
                 viewModelEpi.getEpiByCa(numero_ca)
