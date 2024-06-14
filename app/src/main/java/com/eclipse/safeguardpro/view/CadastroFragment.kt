@@ -71,45 +71,45 @@ class CadastroFragment : Fragment() {
             } else {
                 Toast.makeText(requireContext(), "Digite os dados", Toast.LENGTH_LONG).show()
             }
+        }
 
-            binding.btnDeletar.setOnClickListener {
-                AlertDialog.Builder(requireContext())
-                    .setTitle("Exclusão de pessoa")
-                    .setMessage("você realmente deseja excluir ?")
-                    .setPositiveButton("sim") { _, _ ->
-                        viewModel.delete(viewModel.funcionario.value?.id ?: 0)
-                        findNavController().navigateUp()
-                    }
-                    .setNegativeButton("não") { _, _ -> }
-                    .show()
-            }
-
-            viewModel.funcionario.observe(viewLifecycleOwner) { funcionario ->
-                if (Login.userAdmin) {
-                    binding.edtNome.setText(funcionario.nome)
-                    binding.edtCargo.setText(funcionario.cargo)
-                    binding.edtCpf.setText(funcionario.cpf)
-                    binding.edtSenha.setText(funcionario.senha)
-
-                    binding.btnDeletar.visibility = View.VISIBLE
-                } else {
-                    binding.edtNome.setText(funcionario.nome)
-                    binding.edtNome.isClickable = false
-                    binding.edtCargo.setText(funcionario.cargo)
-                    binding.edtCargo.isClickable = false
-                    binding.edtCpf.setText(funcionario.cpf)
-                    binding.edtCpf.isClickable = false
-                    binding.edtSenha.setText(funcionario.senha)
-                    binding.edtSenha.isClickable = false
-
-                    binding.btnCadastrar.visibility = View.GONE
+        binding.btnDeletar.setOnClickListener {
+            AlertDialog.Builder(requireContext())
+                .setTitle("Exclusão de pessoa")
+                .setMessage("você realmente deseja excluir ?")
+                .setPositiveButton("sim") { _, _ ->
+                    viewModel.delete(viewModel.funcionario.value?.id ?: 0)
+                    findNavController().navigateUp()
                 }
-            }
+                .setNegativeButton("não") { _, _ -> }
+                .show()
+        }
 
-            viewModel.erro.observe(viewLifecycleOwner) {
-                Toast.makeText(requireContext(), "Erro $it", Toast.LENGTH_LONG).show()
-                Log.e("erro Emprestimo", it)
+        viewModel.funcionario.observe(viewLifecycleOwner) { funcionario ->
+            if (Login.userAdmin) {
+                binding.edtNome.setText(funcionario.nome)
+                binding.edtCargo.setText(funcionario.cargo)
+                binding.edtCpf.setText(funcionario.cpf)
+                binding.edtSenha.setText(funcionario.senha)
+
+                binding.btnDeletar.visibility = View.VISIBLE
+            } else {
+                binding.edtNome.setText(funcionario.nome)
+                binding.edtNome.isClickable = false
+                binding.edtCargo.setText(funcionario.cargo)
+                binding.edtCargo.isClickable = false
+                binding.edtCpf.setText(funcionario.cpf)
+                binding.edtCpf.isClickable = false
+                binding.edtSenha.setText(funcionario.senha)
+                binding.edtSenha.isClickable = false
+
+                binding.btnCadastrar.visibility = View.GONE
             }
+        }
+
+        viewModel.erro.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), "Erro $it", Toast.LENGTH_LONG).show()
+            Log.e("erro Emprestimo", it)
         }
     }
 }

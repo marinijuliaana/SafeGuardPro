@@ -22,7 +22,7 @@ class EmprestimoAdapter (
 
         //carrega as informações da pessoa na lista
         fun bind(emprestimo: Emprestimo, clickListListener: (Emprestimo) -> Unit) {
-
+//            TODO Fazer
             //configura o click de algum item da lista
             binding.root.setOnClickListener {
                 clickListListener(emprestimo)

@@ -19,7 +19,7 @@ class EpiAdapter(
 
         //carrega as informações da pessoa na lista
         fun bind(epi: Epi, clickListListener: (Epi) -> Unit) {
-
+//            TODO Fazer
             //configura o click de algum item da lista
             binding.root.setOnClickListener {
                 clickListListener(epi)

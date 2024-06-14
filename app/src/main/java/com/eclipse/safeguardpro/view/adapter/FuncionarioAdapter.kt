@@ -19,7 +19,7 @@ class FuncionarioAdapter(
 
         //carrega as informações da pessoa na lista
         fun bind(funcionario: Funcionario, clickListListener: (Funcionario) -> Unit) {
-
+//            TODO Fazer
             //configura o click de algum item da lista
             binding.root.setOnClickListener {
                 clickListListener(funcionario)
