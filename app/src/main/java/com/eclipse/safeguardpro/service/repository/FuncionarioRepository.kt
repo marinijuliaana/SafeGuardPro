@@ -20,7 +20,9 @@ class FuncionarioRepository(context: Context) {
         return mRemote.createFuncionario(
             nome = funcionario.nome.toRequestBody("text/plain".toMediaTypeOrNull()),
             cpf = funcionario.cpf.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
-            cargo = funcionario.cargo.toRequestBody("text/plain".toMediaTypeOrNull())
+            cargo = funcionario.cargo.toRequestBody("text/plain".toMediaTypeOrNull()),
+            senha = funcionario.senha.toRequestBody("text/plain".toMediaTypeOrNull()),
+            admin = funcionario.admin.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
         ).body() ?: funcionarioEmpty
     }
 
@@ -47,6 +49,8 @@ class FuncionarioRepository(context: Context) {
             nome = funcionario.nome.toRequestBody("text/plain".toMediaTypeOrNull()),
             cpf = funcionario.cpf.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
             cargo = funcionario.cargo.toRequestBody("text/plain".toMediaTypeOrNull()),
+            senha = funcionario.senha.toRequestBody("text/plain".toMediaTypeOrNull()),
+            admin = funcionario.admin.toString().toRequestBody("text/plain".toMediaTypeOrNull()),
             funcionarioId = id
         ).body() ?: funcionarioEmpty
     }

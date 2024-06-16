@@ -24,6 +24,8 @@ interface FuncionarioService {
         @Part("nome") nome: RequestBody,
         @Part("cpf") cpf: RequestBody,
         @Part("cargo") cargo: RequestBody,
+        @Part("senha") senha: RequestBody,
+        @Part("admin") admin: RequestBody,
         ): Response<Funcionario>
 
     @GET("select_funcionarios/{funcionario_id}")
@@ -39,6 +41,8 @@ interface FuncionarioService {
         @Part("nome") nome: RequestBody,
         @Part("cpf") cpf: RequestBody,
         @Part("cargo") cargo: RequestBody,
+        @Part("senha") senha: RequestBody,
+        @Part("admin") admin: RequestBody,
     ): Response<Funcionario>
 
     @DELETE("delete_funcionarios/{funcionario_id}")
