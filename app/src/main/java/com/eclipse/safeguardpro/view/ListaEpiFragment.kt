@@ -72,6 +72,11 @@ class ListaEpiFragment : Fragment() {
             Log.e("erro epis", it)
         }
 
+        viewModel.epiList.observe(viewLifecycleOwner) {
+            adapter.updateEpi(it)
+            Toast.makeText(requireContext(), "Epis: $it", Toast.LENGTH_LONG).show()
+        }
+
         viewModelEmprestimo.emprestimoList.observe(viewLifecycleOwner) { listEntregas ->
             val entregasFuncionario = listEntregas.filter { it.funcionario_id == Login.userId }
 
@@ -84,6 +89,10 @@ class ListaEpiFragment : Fragment() {
             Toast.makeText(requireContext(), "Epis: $listEntregas", Toast.LENGTH_LONG).show()
         }
 
-        viewModelEmprestimo.loadEmprestimos()
+        if (Login.userAdmin){
+            viewModel.loadEpis()
+        } else {
+            viewModelEmprestimo.loadEmprestimos()
+        }
     }
 }

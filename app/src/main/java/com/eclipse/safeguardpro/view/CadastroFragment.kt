@@ -86,21 +86,17 @@ class CadastroFragment : Fragment() {
         }
 
         viewModel.funcionario.observe(viewLifecycleOwner) { funcionario ->
-            if (Login.userAdmin) {
-                binding.edtNome.setText(funcionario.nome)
-                binding.edtCargo.setText(funcionario.cargo)
-                binding.edtCpf.setText(funcionario.cpf)
-                binding.edtSenha.setText(funcionario.senha)
+            binding.edtNome.setText(funcionario.nome)
+            binding.edtCargo.setText(funcionario.cargo)
+            binding.edtCpf.setText(funcionario.cpf)
+            binding.edtSenha.setText(funcionario.senha)
 
+            if (Login.userAdmin) {
                 binding.btnDeletar.visibility = View.VISIBLE
             } else {
-                binding.edtNome.setText(funcionario.nome)
                 binding.edtNome.isClickable = false
-                binding.edtCargo.setText(funcionario.cargo)
                 binding.edtCargo.isClickable = false
-                binding.edtCpf.setText(funcionario.cpf)
                 binding.edtCpf.isClickable = false
-                binding.edtSenha.setText(funcionario.senha)
                 binding.edtSenha.isClickable = false
 
                 binding.btnCadastrar.visibility = View.GONE
