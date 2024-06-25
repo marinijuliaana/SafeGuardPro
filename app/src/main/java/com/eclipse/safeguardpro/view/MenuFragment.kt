@@ -38,14 +38,12 @@ class MenuFragment : Fragment() {
         if (Login.userAdmin){
             binding.btnRelatorioFuncionario.visibility = View.VISIBLE
             binding.btnCadastrarEpi.visibility = View.VISIBLE
-            binding.btnRelatorioEntrega.visibility = View.VISIBLE
 
             binding.btnCadastrarFuncionario.text = "CADASTRAR FUNCIONÁRIO"
             binding.btnRelatorioEpi.text = "VER RELATÓRIO EPI"
         } else {
             binding.btnRelatorioFuncionario.visibility = View.GONE
             binding.btnCadastrarEpi.visibility = View.GONE
-            binding.btnRelatorioEntrega.visibility = View.GONE
 
             binding.btnCadastrarFuncionario.text = "FUNCIONÁRIO"
             binding.btnRelatorioEpi.text = "MEUS EPIs"
@@ -57,12 +55,12 @@ class MenuFragment : Fragment() {
 
         binding.btnCadastrarFuncionario.setOnClickListener {
             if (Login.userAdmin){
+                findNavController().navigate(R.id.cadastroFragment)
+            } else {
                 val funcionarioBundle = Bundle()
                 funcionarioBundle.putInt("funcionarioId", Login.userId)
                 arguments = funcionarioBundle
                 findNavController().navigate(R.id.cadastroFragment, arguments)
-            } else {
-                findNavController().navigate(R.id.cadastroFragment)
             }
         }
 
@@ -75,7 +73,7 @@ class MenuFragment : Fragment() {
         }
 
         binding.btnEntrega.setOnClickListener {
-            findNavController().navigate(R.id.listaFuncionarioFragment)
+            findNavController().navigate(R.id.listaEmprestimoFragment)
         }
     }
 }

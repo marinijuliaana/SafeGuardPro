@@ -15,30 +15,30 @@ import retrofit2.http.Path
 
 interface FuncionarioService {
 
-    @GET("get_funcionarios")
+    @GET("select_funcionarios")
     suspend fun getFuncionarios(): List<Funcionario>
 
     @Multipart
     @POST("add_funcionarios")
     suspend fun createFuncionario(
-        @Part("nome") nome: RequestBody,
+        @Part("nome_funcionario") nome: RequestBody,
         @Part("cpf") cpf: RequestBody,
         @Part("cargo") cargo: RequestBody,
         @Part("senha") senha: RequestBody,
         @Part("admin") admin: RequestBody,
         ): Response<Funcionario>
 
-    @GET("select_funcionarios/{funcionario_id}")
-    suspend fun getFuncionarioById(@Part("funcionario_id") id: Int): Response<List<Funcionario>>
+    @GET("funcionario_id/{funcionario_id}")
+    suspend fun getFuncionarioById(@Path("funcionario_id") id: Int): Response<List<Funcionario>>
 
-    @GET("get_funcionario/{funcionario_cpf}")
+    @GET("funcionario_cpf/{funcionario_cpf}")
     suspend fun getFuncionarioByCpf(@Path("funcionario_cpf") cpf: Int): Response<List<Funcionario>>
 
     @Multipart
     @PUT("update_funcionarios/{funcionario_id}")
     suspend fun updateFuncionario(
-        @Part("funcionario_id") funcionarioId: Int,
-        @Part("nome") nome: RequestBody,
+        @Path("funcionario_id") funcionarioId: Int,
+        @Part("nome_funcionario") nome: RequestBody,
         @Part("cpf") cpf: RequestBody,
         @Part("cargo") cargo: RequestBody,
         @Part("senha") senha: RequestBody,
@@ -46,5 +46,5 @@ interface FuncionarioService {
     ): Response<Funcionario>
 
     @DELETE("delete_funcionarios/{funcionario_id}")
-    suspend fun deleteFuncionarioById(@Part("funcionario_id")id: Int): Response<Funcionario>
+    suspend fun deleteFuncionarioById(@Path("funcionario_id")id: Int): Response<Funcionario>
 }

@@ -17,17 +17,18 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/view"
-        android:layout_width="329dp"
-        android:layout_height="567dp"
+        android:layout_width="336dp"
+        android:layout_height="573dp"
         android:backgroundTint="#DDD5D5"
         app:layout_constraintBottom_toBottomOf="@+id/imageFundo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageFundo">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="306dp"
+            android:layout_height="514dp"
             android:orientation="vertical">
 
             <TextView
@@ -89,16 +90,6 @@
                 android:layout_marginBottom="5dp"
                 android:backgroundTint="#40484d"
                 android:text="REALIZAR ENTREGA" />
-
-            <Button
-                android:id="@+id/btnRelatorioEntrega"
-                android:layout_width="228dp"
-                android:layout_height="46dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:backgroundTint="#40484d"
-                android:text="RELATÓRIO DE ENTREGA" />
 
         </LinearLayout>
 

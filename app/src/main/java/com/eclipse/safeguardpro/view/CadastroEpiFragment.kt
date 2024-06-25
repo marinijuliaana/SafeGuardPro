@@ -91,24 +91,19 @@ class CadastroEpiFragment : Fragment() {
         }
 
         viewModel.epi.observe(viewLifecycleOwner) { epi ->
-            if (Login.userAdmin) {
-                binding.edtNomeEquipamento.setText(epi.nome_equipamento)
-                binding.edtValidadeEpi.setText(epi.validade_epi)
-                binding.edtNumeroCa.setText(epi.numero_ca)
-                binding.edtTipoProtecao.setText(epi.tipo_protecao)
-                binding.edtTempoUso.setText(epi.tempo_uso)
+            binding.edtNomeEquipamento.setText(epi.nome_equipamento)
+            binding.edtValidadeEpi.setText(epi.validade_epi)
+            binding.edtNumeroCa.setText(epi.numero_ca.toString())
+            binding.edtTipoProtecao.setText(epi.tipo_protecao)
+            binding.edtTempoUso.setText(epi.tempo_uso)
 
+            if (Login.userAdmin) {
                 binding.btnDeletar.visibility = View.VISIBLE
             } else {
-                binding.edtNomeEquipamento.setText(epi.nome_equipamento)
                 binding.edtNomeEquipamento.isClickable = false
-                binding.edtValidadeEpi.setText(epi.validade_epi)
                 binding.edtValidadeEpi.isClickable = false
-                binding.edtNumeroCa.setText(epi.numero_ca)
                 binding.edtNumeroCa.isClickable = false
-                binding.edtTipoProtecao.setText(epi.tipo_protecao)
                 binding.edtTipoProtecao.isClickable = false
-                binding.edtTempoUso.setText(epi.tempo_uso)
                 binding.edtTempoUso.isClickable = false
 
                 binding.btnCadastrar.visibility = View.GONE

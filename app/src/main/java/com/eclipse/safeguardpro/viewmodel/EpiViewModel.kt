@@ -62,23 +62,20 @@ class EpiViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun getEpi(id: Int) {
-        viewModelScope.launch(Dispatchers.IO) {
-            try {
-                mEpi.postValue(repository.getEpi(id))
-            } catch (e: Exception) {
-                mErro.postValue(e.message)
-            }
+    fun getEpi(id: Int) = viewModelScope.launch(Dispatchers.IO) {
+        try {
+            mEpi.postValue(repository.getEpi(id))
+        } catch (e: Exception) {
+            mErro.postValue(e.message)
         }
     }
 
-    fun getEpiByCa(ca: Int) {
-        viewModelScope.launch(Dispatchers.IO) {
-            try {
-                mEpi.postValue(repository.getEpiByCa(ca))
-            } catch (e: Exception) {
-                mErro.postValue(e.message)
-            }
+
+    fun getEpiByCa(ca: Int) = viewModelScope.launch(Dispatchers.IO) {
+        try {
+            mEpi.postValue(repository.getEpiByCa(ca))
+        } catch (e: Exception) {
+            mErro.postValue(e.message)
         }
     }
 

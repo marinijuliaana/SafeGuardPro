@@ -13,7 +13,7 @@ import retrofit2.http.Path
 
 interface EmprestimoService {
 
-    @GET("get_emprestimos")
+    @GET("select_emprestimos")
     suspend fun getEmprestimos(): List<Emprestimo>
 
     @Multipart
@@ -26,8 +26,8 @@ interface EmprestimoService {
         @Part("funcionario_id") funcionario_id: RequestBody,
     ): Response<Emprestimo>
 
-    @GET("get_emprestimo/{emprestimo_id}")
-    suspend fun getEmprestimoById(@Part("emprestimo_id") id: Int): Response<List<Emprestimo>>
+    @GET("emprestimo/{emprestimo_id}")
+    suspend fun getEmprestimoById(@Path("emprestimo_id") id: Int): Response<List<Emprestimo>>
 
     @Multipart
     @PUT("update_emprestimos/{emprestimo_id}")
@@ -41,6 +41,6 @@ interface EmprestimoService {
     ): Response<Emprestimo>
 
     @DELETE("delete_emprestimos/{emprestimo_id}")
-    suspend fun deleteEmprestimoById(@Part("emprestimo_id")id: Int): Response<Emprestimo>
+    suspend fun deleteEmprestimoById(@Path("emprestimo_id")id: Int): Response<Emprestimo>
 
 }

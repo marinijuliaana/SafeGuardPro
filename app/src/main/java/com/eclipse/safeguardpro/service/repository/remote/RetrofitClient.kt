@@ -19,7 +19,7 @@ class RetrofitClient private constructor() {
 
             if (!::retrofit.isInitialized) {
                 retrofit = Retrofit.Builder()
-                    .baseUrl("")
+                    .baseUrl("https://safe-guard-pro.vercel.app/")
                     .client(httpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()

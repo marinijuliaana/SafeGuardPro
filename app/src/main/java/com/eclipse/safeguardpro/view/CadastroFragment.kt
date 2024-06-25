@@ -44,15 +44,15 @@ class CadastroFragment : Fragment() {
             val senha = binding.edtSenha.editableText.toString()
             val cargo = binding.edtCargo.editableText.toString()
             val cpf = binding.edtCpf.editableText.toString().toInt()
-//            TODO Add o checkbox no xml
-//            val admin = binding.chkAdmin.isChecked()
+            val admin = binding.chkAdmin.isChecked
 
             if (nome != "" && senha != "" && cargo != "" && cpf != 0) {
                 val funcionario = Funcionario(
                     nome = nome,
                     cpf = cpf,
                     cargo = cargo,
-                    senha = senha
+                    senha = senha,
+                    admin = admin
                 )
 
                 viewModel.funcionario.value?.let {
@@ -66,6 +66,7 @@ class CadastroFragment : Fragment() {
                 binding.edtCpf.editableText.clear()
                 binding.edtCargo.editableText.clear()
                 binding.edtSenha.editableText.clear()
+                binding.chkAdmin.isChecked = false
 
                 findNavController().navigateUp()
             } else {
@@ -88,18 +89,20 @@ class CadastroFragment : Fragment() {
         viewModel.funcionario.observe(viewLifecycleOwner) { funcionario ->
             binding.edtNome.setText(funcionario.nome)
             binding.edtCargo.setText(funcionario.cargo)
-            binding.edtCpf.setText(funcionario.cpf)
+            binding.edtCpf.setText(funcionario.cpf.toString())
             binding.edtSenha.setText(funcionario.senha)
 
             if (Login.userAdmin) {
                 binding.btnDeletar.visibility = View.VISIBLE
             } else {
-                binding.edtNome.isClickable = false
-                binding.edtCargo.isClickable = false
-                binding.edtCpf.isClickable = false
-                binding.edtSenha.isClickable = false
+                binding.edtNome.isEnabled = false
+                binding.edtCargo.isEnabled = false
+                binding.edtCpf.isEnabled = false
+                binding.edtSenha.isEnabled = false
 
                 binding.btnCadastrar.visibility = View.GONE
+                binding.btnDeletar.visibility = View.GONE
+                binding.chkAdmin.visibility = View.GONE
             }
         }
 

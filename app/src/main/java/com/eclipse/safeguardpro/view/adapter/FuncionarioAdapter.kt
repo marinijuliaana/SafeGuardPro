@@ -20,6 +20,9 @@ class FuncionarioAdapter(
         //carrega as informações da pessoa na lista
         fun bind(funcionario: Funcionario, clickListListener: (Funcionario) -> Unit) {
 //            TODO Fazer
+            binding.tvNome.text = "Nome:" + funcionario.nome
+            binding.tvcargo.text = "Cargo:" + funcionario.cargo
+            binding.tvCodigo.text = "CPF:" + funcionario.cpf.toString()
             //configura o click de algum item da lista
             binding.root.setOnClickListener {
                 clickListListener(funcionario)

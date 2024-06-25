@@ -70,7 +70,7 @@ class EmprestimoViewModel (application: Application) : AndroidViewModel(applicat
     fun getEmprestimo(id: Int) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                mCreatedEmprestimo.postValue(repository.getEmprestimo(id))
+                mEmprestimo.postValue(repository.getEmprestimo(id))
             } catch (e: Exception) {
                 mErro.postValue(e.message)
             }

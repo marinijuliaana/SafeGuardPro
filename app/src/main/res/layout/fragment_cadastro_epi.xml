@@ -75,7 +75,7 @@
                 android:layout_marginBottom="20dp"
                 android:ems="10"
                 android:hint="Digite o número do Ca"
-                android:inputType="numberPassword"
+                android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edtValidadeEpi" />

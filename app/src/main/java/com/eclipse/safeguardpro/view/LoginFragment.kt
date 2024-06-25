@@ -41,13 +41,15 @@ class LoginFragment : Fragment() {
             if ((cpf.isBlank() || cpf.isEmpty()) || (senha.isBlank() || senha.isEmpty())) {
                 Toast.makeText(requireContext(), "Preencha os campos", Toast.LENGTH_LONG).show()
             } else {
-                viewModelFuncionario.getFuncionario(cpf.toInt())
+                viewModelFuncionario.getFuncionarioByCpf(cpf.toInt())
             }
         }
 
         viewModelFuncionario.funcionario.observe(viewLifecycleOwner) {
             if (it.senha == senha && it.cpf == cpf.toInt()){
                 Login.userConected(it.id, it.cpf, it.admin)
+                Toast.makeText(requireContext(), "Login $it", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Login Obj ${Login.userId} - ${Login.userCpf} - ${Login.userAdmin}", Toast.LENGTH_LONG).show()
 
                 findNavController().navigate(R.id.menuFragment)
             } else {

@@ -64,7 +64,7 @@ class ListaEpiFragment : Fragment() {
         viewModel.epi.observe(viewLifecycleOwner) { epi ->
             episFuncionario.add(epi)
 //            TODO testar aqui ou na linha 81
-            adapter.updateEpi(episFuncionario)
+//            adapter.updateEpi(episFuncionario)
         }
 
         viewModel.erro.observe(viewLifecycleOwner) {

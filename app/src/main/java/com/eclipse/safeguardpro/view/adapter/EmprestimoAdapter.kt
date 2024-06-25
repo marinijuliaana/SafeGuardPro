@@ -22,7 +22,10 @@ class EmprestimoAdapter (
 
         //carrega as informações da pessoa na lista
         fun bind(emprestimo: Emprestimo, clickListListener: (Emprestimo) -> Unit) {
-//            TODO Fazer
+
+            binding.tvCpf.text = "CPF: " + emprestimo.cpf.toString()
+            binding.tvNumeroCa.text = "CA: " + emprestimo.numero_ca.toString()
+
             //configura o click de algum item da lista
             binding.root.setOnClickListener {
                 clickListListener(emprestimo)
